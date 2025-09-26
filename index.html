@@ -1,81 +1,119 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- Base -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>is it only me — Official Store</title>
-  <meta name="description" content="The faceless movement. Premium villain-arc streetwear. Drop 01 available now." />
-  <link rel="preload" href="/assets/hero-ad.png" as="image" />
+  <title>is it only me — The Faceless Movement (Drop 01)</title>
+  <meta name="description" content="Premium villain-arc streetwear from the IOM community. Graffiti energy, fashion finish. Drop 01 live now." />
+  <link rel="canonical" href="https://isitonlyme.com/" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+
+  <!-- Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="is it only me — The Faceless Movement" />
+  <meta property="og:description" content="You can’t cancel what’s faceless. Drop 01 available now." />
+  <meta property="og:image" content="https://isitonlyme.com/assets/og-hero.jpg" />
+  <meta property="og:url" content="https://isitonlyme.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="is it only me — The Faceless Movement" />
+  <meta name="twitter:description" content="Graffiti + glitch DNA. Premium streetwear. Drop 01 live." />
+  <meta name="twitter:image" content="https://isitonlyme.com/assets/og-hero.jpg" />
+
+  <!-- Preloads -->
+  <link rel="preload" href="/assets/hero-ad.webp" as="image" imagesrcset="/assets/hero-ad.webp 1200w, /assets/hero-ad@2x.webp 2400w" imagesizes="(max-width: 960px) 100vw, 55vw" />
+
   <style>
     :root{
-      --bg:#0a0a0b; --card:#111114; --ink:#e7e7ea; --muted:#9a9aa3; 
-      --red:#ff2d2d; --blue:#46b6ff; --accent:linear-gradient(90deg,#ff2d2d, #46b6ff);
+      --bg:#0a0a0b; --panel:#111114; --ink:#e7e7ea; --muted:#9a9aa3;
+      --red:#ff2d2d; --blue:#46b6ff; --line:#1b1b20;
+      --accent:linear-gradient(90deg,#ff2d2d,#46b6ff);
+      --glow:0 0 12px rgba(255,45,45,.45);
     }
     *{box-sizing:border-box}
-    html,body{height:100%; background:radial-gradient(1200px 700px at 10% -10%,rgba(70,182,255,.08),transparent),
-                          radial-gradient(1200px 700px at 110% 110%,rgba(255,45,45,.08),transparent),
-                          var(--bg); color:var(--ink); font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial; margin:0}
+    html,body{height:100%; margin:0; color:var(--ink);
+      background:
+        radial-gradient(1200px 700px at 10% -10%,rgba(70,182,255,.08),transparent),
+        radial-gradient(1200px 700px at 110% 110%,rgba(255,45,45,.08),transparent),
+        var(--bg);
+      font: 16px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial;
+    }
     a{color:inherit; text-decoration:none}
+    img{max-width:100%; height:auto; display:block}
     .container{max-width:1200px; margin:0 auto; padding:24px}
     .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
     .brand{display:flex; align-items:center; gap:12px}
-    .brand img{width:36px; height:36px; filter:drop-shadow(0 0 12px rgba(255,45,45,.5))}
+    .brand img{width:36px; height:36px; filter:drop-shadow(var(--glow))}
     .pill{padding:8px 14px; border:1px solid #232328; border-radius:999px; color:var(--muted)}
     .cta{padding:14px 22px; background:var(--accent); border:0; border-radius:999px; color:#0a0a0b; font-weight:700; cursor:pointer}
+    .cta:focus-visible,.pill:focus-visible{outline:2px solid var(--blue); outline-offset:2px}
+
     .hero{display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:center; margin-top:24px}
-    .hero-card{background:linear-gradient(180deg,#121216,#0d0d10); border:1px solid #1b1b20; border-radius:18px; overflow:hidden; position:relative}
-    .hero-card img{width:100%; height:auto; display:block; mix-blend:screen}
+    .card{background:linear-gradient(180deg,#121216,#0d0d10); border:1px solid var(--line); border-radius:18px}
+    .hero-media{position:relative; overflow:hidden}
     .tag{position:absolute; top:14px; left:14px; padding:6px 10px; background:#121216c0; border:1px solid #24242a; border-radius:8px; font-size:12px; color:var(--muted)}
     .hero-copy{display:flex; flex-direction:column; gap:18px; padding:10px}
-    .title{font-size:48px; line-height:1.02; letter-spacing:-.02em; margin:0}
+    .title{font-size:48px; line-height:1.05; letter-spacing:-.02em; margin:0}
     .subtitle{color:var(--muted); font-size:16px}
     .stack{display:flex; gap:12px; flex-wrap:wrap}
+
     .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:36px 0}
-    .card{background:var(--card); border:1px solid #1b1b20; border-radius:16px; padding:14px}
+    .product{padding:14px}
     .thumb{aspect-ratio:1/1; border-radius:12px; background:#0e0e12; display:grid; place-items:center; overflow:hidden; border:1px solid #1a1a1f}
-    .thumb img{max-width:88%; height:auto; filter:drop-shadow(0 0 10px rgba(255,45,45,.45))}
+    .thumb img{max-width:88%; filter:drop-shadow(var(--glow))}
     .row{display:flex; align-items:center; justify-content:space-between; margin-top:12px}
     .price{color:var(--muted); font-weight:600}
     .buy{padding:10px 14px; border:1px solid #232328; border-radius:12px; background:#141419; color:var(--ink); cursor:pointer}
     .buy:hover{border-color:#2a2a30}
-    .banner{margin:38px 0; padding:22px; border-radius:16px; border:1px dashed #27272f; background:linear-gradient(180deg,#0e0e12, #0a0a0c)}
+
+    .banner{margin:38px 0; padding:22px; border-radius:16px; border:1px dashed #27272f; background:linear-gradient(180deg,#0e0e12,#0a0a0c)}
     .banner strong{background:var(--accent); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .footer{display:grid; gap:10px; padding:26px 0 60px; color:var(--muted); border-top:1px solid #1b1b20}
+
+    .footer{display:grid; gap:10px; padding:26px 0 60px; color:var(--muted); border-top:1px solid var(--line)}
     .logos{display:flex; gap:12px}
-    .logos img{width:36px; height:36px; border-radius:8px; background:#0d0d10; border:1px solid #1b1b20; padding:6px}
+    .logos img{width:36px; height:36px; border-radius:8px; background:#0d0d10; border:1px solid var(--line); padding:6px}
+
     @media (max-width:960px){
-      .hero{grid-template-columns:1fr; }
-      .title{font-size:34px}
+      .hero{grid-template-columns:1fr}
+      .title{font-size:36px}
       .grid{grid-template-columns:1fr 1fr}
     }
-    @media (max-width:620px){ .grid{grid-template-columns:1fr} }
+    @media (max-width:620px){
+      .grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
-  <header class="container nav">
-    <div class="brand">
-      <img src="/assets/logo-a.png" alt="IOM logo" />
+  <header class="container nav" role="banner">
+    <a class="brand" href="#" aria-label="is it only me home">
+      <img src="/assets/logo-a.png" width="36" height="36" alt="IOM logo" loading="eager" />
       <strong>is it only me</strong>
-    </div>
-    <nav class="stack">
+    </a>
+    <nav class="stack" aria-label="Primary">
       <a class="pill" href="#shop">Drop 01</a>
       <a class="pill" href="#about">About</a>
-      <button class="cta" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+      <button class="cta" type="button" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop Now</button>
     </nav>
   </header>
 
-  <main class="container">
+  <main class="container" id="main">
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-card">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="card hero-media">
         <span class="tag">Drop 01 — The Faceless Movement</span>
-        <img src="/assets/hero-ad.png" alt="Premium merch advertisement for is it only me" />
+        <picture>
+          <source srcset="/assets/hero-ad.webp 1200w, /assets/hero-ad@2x.webp 2400w" type="image/webp" />
+          <img src="/assets/hero-ad.png" alt="Premium IOM merch — neon graffiti, dark studio lighting" width="1200" height="900" loading="eager" />
+        </picture>
       </div>
       <div class="hero-copy">
-        <h1 class="title">You can’t cancel what’s faceless.</h1>
-        <p class="subtitle">Street-level energy. Fashion-grade finish. Built around the villain-arc mythos of the IOM community.</p>
+        <h1 class="title" id="hero-title">You can’t cancel what’s faceless.</h1>
+        <p class="subtitle">Street-level energy. Fashion-grade finish. Built on the IOM villain-arc mythos.</p>
         <div class="stack">
-          <button class="cta" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop the Drop</button>
+          <button class="cta" type="button" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Shop the Drop</button>
           <a class="pill" href="#newsletter">Get Early Access</a>
         </div>
       </div>
@@ -83,69 +121,119 @@
 
     <!-- PRODUCT GRID -->
     <section id="shop" class="grid" aria-label="Shop Grid">
-      <!-- Logo A -->
-      <div class="card">
-        <div class="thumb"><img src="/assets/logo-a.png" alt="Red neon faceless question logo" /></div>
-        <div class="row">
-          <span>Hoodie — Logo A</span>
-          <span class="price">$68</span>
+      <!-- Product A -->
+      <article class="card product" itemscope itemtype="https://schema.org/Product">
+        <div class="thumb" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/logo-a.webp" type="image/webp" />
+            <img src="/assets/logo-a.png" alt="Red neon faceless question logo" width="512" height="512" loading="lazy" />
+          </picture>
         </div>
-        <div class="row"><button class="buy">Add to Cart</button><span class="price">Cap — $32</span></div>
-      </div>
-      <!-- Logo B -->
-      <div class="card">
-        <div class="thumb"><img src="/assets/logo-b.png" alt="Shield IOM? logo" /></div>
         <div class="row">
-          <span>Hoodie — Logo B</span>
-          <span class="price">$72</span>
+          <span itemprop="name">Hoodie — Logo A</span>
+          <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="USD" /><span itemprop="price">$68</span>
+          </span>
         </div>
-        <div class="row"><button class="buy">Add to Cart</button><span class="price">Cap — $34</span></div>
-      </div>
-      <!-- Logo C -->
-      <div class="card">
-        <div class="thumb"><img src="/assets/logo-c.png" alt="IOM graffiti tag" /></div>
         <div class="row">
-          <span>Hoodie — Graffiti</span>
-          <span class="price">$75</span>
+          <button class="buy" type="button" aria-label="Add Hoodie Logo A to cart">Add to Cart</button>
+          <span class="price">Cap — $32</span>
         </div>
-        <div class="row"><button class="buy">Add to Cart</button><span class="price">Cap — $34</span></div>
-      </div>
+      </article>
+
+      <!-- Product B -->
+      <article class="card product" itemscope itemtype="https://schema.org/Product">
+        <div class="thumb" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/logo-b.webp" type="image/webp" />
+            <img src="/assets/logo-b.png" alt="Shield-style IOM insignia" width="512" height="512" loading="lazy" />
+          </picture>
+        </div>
+        <div class="row">
+          <span itemprop="name">Hoodie — Logo B</span>
+          <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="USD" /><span itemprop="price">$72</span>
+          </span>
+        </div>
+        <div class="row">
+          <button class="buy" type="button" aria-label="Add Hoodie Logo B to cart">Add to Cart</button>
+          <span class="price">Cap — $34</span>
+        </div>
+      </article>
+
+      <!-- Product C -->
+      <article class="card product" itemscope itemtype="https://schema.org/Product">
+        <div class="thumb" aria-hidden="true">
+          <picture>
+            <source srcset="/assets/logo-c.webp" type="image/webp" />
+            <img src="/assets/logo-c.png" alt="IOM graffiti tag logo" width="512" height="512" loading="lazy" />
+          </picture>
+        </div>
+        <div class="row">
+          <span itemprop="name">Hoodie — Graffiti</span>
+          <span class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="USD" /><span itemprop="price">$75</span>
+          </span>
+        </div>
+        <div class="row">
+          <button class="buy" type="button" aria-label="Add Hoodie Graffiti to cart">Add to Cart</button>
+          <span class="price">Cap — $34</span>
+        </div>
+      </article>
     </section>
 
     <!-- BANNER -->
-    <section class="banner" id="about">
-      <p><strong>The Faceless Movement</strong> is a premium minimal brand powered by the IOM community—built on relatable truth, sharpened by a villain arc, finished with graffiti + glitch DNA.</p>
+    <section id="about" class="banner" aria-label="About is it only me">
+      <p><strong>The Faceless Movement</strong> is a premium minimal brand powered by the IOM community — relatable truth sharpened by a villain arc, sealed with graffiti + glitch DNA.</p>
     </section>
 
     <!-- NEWSLETTER -->
-    <section id="newsletter" class="card" style="padding:22px;">
-      <h2 style="margin:6px 0 10px;">Get early drops</h2>
+    <section id="newsletter" class="card" style="padding:22px;" aria-labelledby="nl-title">
+      <h2 id="nl-title" style="margin:6px 0 10px;">Get early drops</h2>
       <p class="subtitle" style="margin:0 0 12px;">Join the list. No spam. Just heat.</p>
-      <form onsubmit="event.preventDefault(); subscribe();" class="stack" style="align-items:center;">
-        <input id="email" type="email" required placeholder="your@email.com" 
+      <form onsubmit="subscribe(event)" class="stack" style="align-items:center;" aria-label="Newsletter signup">
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" required inputmode="email" autocomplete="email"
+               placeholder="your@email.com"
                style="padding:12px 14px;border-radius:12px;border:1px solid #232328;background:#111116;color:var(--ink);min-width:260px" />
         <button class="cta" type="submit">Notify Me</button>
       </form>
-      <p id="msg" class="subtitle" style="margin-top:10px;"></p>
+      <p id="msg" class="subtitle" role="status" style="margin-top:10px;"></p>
     </section>
   </main>
 
-  <footer class="container footer">
-    <div class="logos">
-      <img src="/assets/logo-a.png" alt="IOM logo A">
-      <img src="/assets/logo-b.png" alt="IOM logo B">
-      <img src="/assets/logo-c.png" alt="IOM logo C">
+  <footer class="container footer" role="contentinfo">
+    <div class="logos" aria-label="Brand marks">
+      <img src="/assets/logo-a.png" width="36" height="36" alt="IOM logo A" loading="lazy">
+      <img src="/assets/logo-b.png" width="36" height="36" alt="IOM logo B" loading="lazy">
+      <img src="/assets/logo-c.png" width="36" height="36" alt="IOM graffiti logo" loading="lazy">
     </div>
     <small>© <span id="yr"></span> is it only me — All rights reserved.</small>
   </footer>
 
+  <!-- Minimal JS -->
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
-    function subscribe(){
-      const el=document.getElementById('email'), m=document.getElementById('msg');
+    function subscribe(e){
+      e.preventDefault();
+      const el = document.getElementById('email');
+      const m  = document.getElementById('msg');
       if(!el.checkValidity()){ el.reportValidity(); return; }
-      m.textContent="Thanks — you’re on the list. See you at the drop.";
+      // TODO: hook to backend / Zapier / Beehiiv
+      m.textContent = "Thanks — you’re on the list. See you at the drop.";
+      el.value = "";
     }
+  </script>
+
+  <!-- JSON-LD (Brand) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Brand",
+    "name":"is it only me",
+    "logo":"https://isitonlyme.com/assets/logo-a.png",
+    "url":"https://isitonlyme.com/"
+  }
   </script>
 </body>
 </html>
